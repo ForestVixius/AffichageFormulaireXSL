@@ -7,10 +7,12 @@
 			<body>
 
 			<h1>Prévisualisation du formulaire :</h1>
-				<xsl:for-each select="./*">
+				<xsl:for-each select="/.">
+					<xsl:for-each select="descendant::*">&#160;
 					<xsl:if test="name(.) = 'boutonGroupe'">
-						
+						<xsl:text>Bonour</xsl:text>
 					</xsl:if>
+					</xsl:for-each>
 				</xsl:for-each>
 				<br />
 				<!-- <h3>Boutons Groupe :</h3>
