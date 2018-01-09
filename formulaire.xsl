@@ -5,30 +5,43 @@
 			<head>
 			</head>
 			<body>
+
 			<h1>Prévisualisation du formulaire :</h1>
-				<h3>Boutons Groupe :</h3>
+				<xsl:for-each select="./*">
+					<xsl:if test="name(.) = 'boutonGroupe'">
+						
+					</xsl:if>
+				</xsl:for-each>
+				<br />
+				<!-- <h3>Boutons Groupe :</h3>
 				<xsl:apply-templates select="formulaire/boutonGroupe" />
 				<h3>Liste :</h3>
 				<xsl:apply-templates select="formulaire/liste" />
 				<h3>Composants :</h3>
-				<xsl:apply-templates select="formulaire/composant" />
+				<xsl:apply-templates select="formulaire/composant" /> -->
 
 			</body>
 		</html>
 	</xsl:template>
 
 	<xsl:template match="boutonGroupe">
-			<xsl:value-of select="@id"/>
-			<br />
+		<xsl:for-each select="./*">
+			<xsl:value-of select="."></xsl:value-of>&#160;
+		</xsl:for-each>
+		<br />
 	</xsl:template>
 
 	<xsl:template match="liste">
-		<xsl:value-of select="@id"/>
+		<xsl:for-each select="./*">
+			<xsl:value-of select="."></xsl:value-of>&#160;
+		</xsl:for-each>
 		<br />
 	</xsl:template>
 
 	<xsl:template match="composant">
-		<xsl:value-of select="@id"/>
+		<xsl:for-each select="./*">
+			<xsl:value-of select="."></xsl:value-of>&#160;
+		</xsl:for-each>
 		<br />
 	</xsl:template>
 
