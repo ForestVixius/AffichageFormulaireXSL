@@ -5,19 +5,31 @@
 			<head>
 			</head>
 			<body>
-			<h1>Les différents type de navire</h1>
-				<xsl:apply-templates select="port" />
+			<h1>Prévisualisation du formulaire :</h1>
+				<h3>Boutons Groupe :</h3>
+				<xsl:apply-templates select="formulaire/boutonGroupe" />
+				<h3>Liste :</h3>
+				<xsl:apply-templates select="formulaire/liste" />
+				<h3>Composants :</h3>
+				<xsl:apply-templates select="formulaire/composant" />
+
 			</body>
 		</html>
 	</xsl:template>
 
-	<xsl:template match="port">
-		<xsl:for-each select="typeNav">
-			<xsl:value-of select="@idType"/>
-			&#160;&#160;
-			<xsl:value-of select="designation"/>
+	<xsl:template match="boutonGroupe">
+			<xsl:value-of select="@id"/>
 			<br />
-		</xsl:for-each>
+	</xsl:template>
+
+	<xsl:template match="liste">
+		<xsl:value-of select="@id"/>
+		<br />
+	</xsl:template>
+
+	<xsl:template match="composant">
+		<xsl:value-of select="@id"/>
+		<br />
 	</xsl:template>
 
 </xsl:stylesheet>
