@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE formulaire PUBLIC "-//JDOM//DTD validation 1.0//EN" "DTD.dtd">
+<?xml-stylesheet type="text/xsl" href="formulaire.xsl"?>
+<formulaire>
+
+    <boutonGroupe id="c1" type="String">
+        <label>Fruit</label>
+        <checkBox>Pomme</checkBox>
+        <checkBox>Poire</checkBox>
+        <checkBox>Fraise</checkBox>
+    </boutonGroupe>
+    
+    <liste id="c2" type="String">
+        <label>Pays</label>
+        <element>France</element>
+        <element>Antigua Barbuda</element>
+    </liste>
+    
+    <boutonGroupe id="c4" type="String">
+        <label>Sexe</label>
+        <boutonRadio>Homme</boutonRadio>
+        <boutonRadio>Femme</boutonRadio>
+    </boutonGroupe>
+    
+    <composant id="c3" compo="champDeTexte" type="String">
+        <label>Prénom</label>
+    </composant>
+    
+</formulaire>
