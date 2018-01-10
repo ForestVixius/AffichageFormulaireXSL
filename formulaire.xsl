@@ -7,14 +7,45 @@
 			<body>
 
 			<h1>Prévisualisation du formulaire :</h1>
+			<form>
 				<xsl:for-each select="/.">
-					<xsl:for-each select="descendant::*">&#160;
-					<xsl:if test="name(.) = 'boutonGroupe'">
-						<xsl:text>Bonour</xsl:text>
-					</xsl:if>
+					<xsl:for-each select="descendant::*">
+						<xsl:if test="name(.) = 'boutonGroupe'">
+							<xsl:value-of select="label"></xsl:value-of>&#160;&#160;
+							<xsl:for-each select="descendant::*">
+								<xsl:if test="name(.) = 'checkBox'">
+									<input type="checkbox" name="." value="."></input>
+									<xsl:value-of select="."/>&#160;
+								</xsl:if>
+								<xsl:if test="name(.) = 'boutonRadio'">
+									<input type="radio" name="." value="."></input>
+									<xsl:value-of select="."/>&#160;
+								</xsl:if>
+							</xsl:for-each>
+							<br />
+						</xsl:if>
+						<xsl:if test="name(.) = 'liste'">
+							<xsl:value-of select="label"></xsl:value-of>&#160;&#160;
+							<xsl:for-each select="descendant::*">
+								<xsl:if test="name(.) != 'label'">
+									<xsl:value-of select="."/>&#160;
+								</xsl:if>
+							</xsl:for-each>
+							<br />
+						</xsl:if>
+						<xsl:if test="name(.) = 'composant'">
+
+							<xsl:value-of select="label"></xsl:value-of>&#160;&#160;
+							<xsl:for-each select="descendant::*">
+								<xsl:if test="name(.) != 'label'">
+									<xsl:value-of select="."/>&#160;
+								</xsl:if>
+							</xsl:for-each>
+							<br />
+						</xsl:if>
 					</xsl:for-each>
 				</xsl:for-each>
-				<br />
+				</form>
 				<!-- <h3>Boutons Groupe :</h3>
 				<xsl:apply-templates select="formulaire/boutonGroupe" />
 				<h3>Liste :</h3>
@@ -26,25 +57,6 @@
 		</html>
 	</xsl:template>
 
-	<xsl:template match="boutonGroupe">
-		<xsl:for-each select="./*">
-			<xsl:value-of select="."></xsl:value-of>&#160;
-		</xsl:for-each>
-		<br />
-	</xsl:template>
 
-	<xsl:template match="liste">
-		<xsl:for-each select="./*">
-			<xsl:value-of select="."></xsl:value-of>&#160;
-		</xsl:for-each>
-		<br />
-	</xsl:template>
-
-	<xsl:template match="composant">
-		<xsl:for-each select="./*">
-			<xsl:value-of select="."></xsl:value-of>&#160;
-		</xsl:for-each>
-		<br />
-	</xsl:template>
 
 </xsl:stylesheet>
