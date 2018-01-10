@@ -17,6 +17,7 @@ body, h1, h2, h3, h4, h5, h6, section, p, pre, input, select, textarea, button, 
 
 body {
     font-size: 14px;
+    margin: 20px;
 }
 
 /* Table */
