@@ -16,12 +16,12 @@
 								<tr><td><xsl:value-of select="label"></xsl:value-of></td><td>
 								<xsl:for-each select="descendant::*">
 									<xsl:if test="name(.) = 'checkBox'">
-										<td><xsl:element name="input">
+										<xsl:element name="input">
 											<xsl:attribute name="class">inputForm</xsl:attribute>
 											<xsl:attribute name="type">checkbox</xsl:attribute>
 											<xsl:attribute name="value"><xsl:value-of select="."/></xsl:attribute>
 											<p class="textInput">	<xsl:value-of select="."/></p>
-										</xsl:element></td>
+										</xsl:element>
 									</xsl:if>
 									<xsl:if test="name(.) = 'boutonRadio'">
 										<xsl:element name="input">
