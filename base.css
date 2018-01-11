@@ -123,3 +123,11 @@ input[type=text]{
 .colID, .colRetour {
     width: 60px;
 }
+
+/* TABLEAU */
+
+.tableaue>tbody>tr>td{
+    width: 16px;
+    height: 16px;
+    border: 1px solid black;
+}

@@ -66,6 +66,13 @@
 								</select>
 								</td></tr>
 							</xsl:if>
+							<xsl:if test="name(.) = 'tableau'">
+								<table class="tableau">
+									<xsl:call-template name="lignes">
+										<xsl:with-param name="i" select="0"/>
+									</xsl:call-template>
+								</table>
+							</xsl:if>
 						</xsl:for-each>
 					</xsl:for-each>
 				</table>
@@ -74,6 +81,29 @@
 		</html>
 	</xsl:template>
 
+	<xsl:template name="lignes">
+		<xsl:param name="i"/>
+		<xsl:value-of select="number($i)"/>
+		<xsl:if test="$i &lt; 5">
+			<tr>
+			<xsl:call-template name="colonnes">
+				<xsl:with-param name="cpt" select="0"/>
+			</xsl:call-template>
+			<xsl:call-template name="lignes">
+				<xsl:with-param name="i" select="number($i)+1"/>
+			</xsl:call-template>
+			</tr>
+		</xsl:if>
+	</xsl:template>
 
+	<xsl:template name="colonnes">
+		<xsl:param name="cpt"/>
+		<xsl:if test="$cpt &lt; 5">
+		<td>o</td>
+		<xsl:call-template name="colonnes">
+			<xsl:with-param name="cpt" select="number($cpt)+1"/>
+		</xsl:call-template>
+		</xsl:if>
+	</xsl:template>
 
 </xsl:stylesheet>

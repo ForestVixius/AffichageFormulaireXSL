@@ -28,5 +28,11 @@
     <composant id="c3" compo="champDeTexte" type="String">
         <label>Prénom</label>
     </composant>
+
+    <tableau id="c3" compo="champDeTexte" type="String">
+        <label>Prénom</label>
+        <nbLignes>10</nbLignes>
+        <nbColonnes>10</nbColonnes>
+    </tableau>
     
 </formulaire>
