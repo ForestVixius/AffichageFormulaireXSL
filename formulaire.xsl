@@ -4,6 +4,8 @@
 		<html>
 			<head>
 				<link href="base.css" rel="stylesheet"/>
+				<script src="jquery-3.1.1.min.js"></script>
+				<script type="text/javascript" src="touches.js"></script>
 			</head>
 			<body>
 
@@ -13,7 +15,9 @@
 					<xsl:for-each select="/.">
 						<xsl:for-each select="descendant::*">
 							<xsl:if test="name(.) = 'boutonGroupe'">
-								<tr><td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
+								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
+								<td><xsl:value-of select="label"></xsl:value-of></td><td>
 								<xsl:for-each select="descendant::*">
 									<xsl:if test="name(.) = 'checkBox'">
 										<xsl:element name="input">
@@ -37,7 +41,9 @@
 							</xsl:if>
 							
 							<xsl:if test="name(.) = 'composant'">
-								<tr><td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
+								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
+								<td><xsl:value-of select="label"></xsl:value-of></td><td>
 								<xsl:if test="@compo != 'label'">
 									<xsl:element name="input">
 										<xsl:attribute name="class">inputForm</xsl:attribute>
@@ -46,8 +52,10 @@
 									</xsl:element>
 								</xsl:if></td></tr>
 							</xsl:if>
+
 							<xsl:if test="name(.) = 'liste'">
-								<tr>
+								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
+								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
 								<td><xsl:value-of select="label"></xsl:value-of></td><td>
 								<select>
 									<xsl:for-each select="descendant::*">
@@ -62,13 +70,6 @@
 					</xsl:for-each>
 				</table>
 			</form>
-				<!-- <h3>Boutons Groupe :</h3>
-				<xsl:apply-templates select="formulaire/boutonGroupe" />
-				<h3>Liste :</h3>
-				<xsl:apply-templates select="formulaire/liste" />
-				<h3>Composants :</h3>
-				<xsl:apply-templates select="formulaire/composant" /> -->
-
 			</body>
 		</html>
 	</xsl:template>

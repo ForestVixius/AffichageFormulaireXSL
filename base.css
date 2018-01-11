@@ -29,7 +29,7 @@ td,
 th {
     text-align: left;
     padding: 8px;
-    width: 100px;
+    width: 120px;
     display: inline;
 }
 
@@ -65,38 +65,61 @@ input:focus {
 select,
 .select,
 textarea {
-    background: #fff;
-    border: 1px solid #ddd;
+    background           : #fff;
+    border               : 1px solid #ddd;
     -webkit-border-radius: 0;
-    -webkit-appearance: none;
-    border-radius: 0;
-    box-sizing: border-box;
-    line-height: 17px;
-    height: 32px;
-    width: 100%;
-    padding: 6px 8px 6px 8px;
-    margin-bottom: 15px;
-    font-size: inherit;
-    vertical-align: middle;
+    -webkit-appearance   : none;
+    border-radius        : 0;
+    box-sizing           : border-box;
+    line-height          : 17px;
+    height               : 32px;
+    width                : 100%;
+    padding              : 6px 8px 6px 8px;
+    margin-bottom        : 15px;
+    font-size            : inherit;
+    vertical-align       : middle;
 }
 
 input {
-    background: #fff;
-    border: 1px solid #ddd;
+    background           : #fff;
+    border               : 1px solid #ddd;
     -webkit-border-radius: 0;
-    margin-right : 10px; 
-    border-radius: 0;
-    box-sizing: border-box;
-    line-height: 17px;
-    height: 16px;
-    width: 16px;
+    margin-right         : 10px; 
+    border-radius        : 0;
+    box-sizing           : border-box;
+    line-height          : 17px;
+    height               : 16px;
+    width                : 16px;
 }
 
 input[type=text]{
     height: 32px;
-    width: 300px;
+    width : 300px;
 }
 
 .inputForm {
     float : left;
+}
+
+/* ID */
+
+.id, .retour {
+    position     : relative;
+    left         : 10px;
+    display      : none;
+    padding      : 5px;
+    border-radius: 5px;
+    color        : white;
+}
+
+.retour {
+    background-color: green;
+}
+
+.id {
+    background-color: red;
+}
+
+.colID, .colRetour {
+    width: 60px;
 }

@@ -1,22 +1,32 @@
-<!ELEMENT formulaire ((composant | liste | boutonGroupe)*)>
-	 <!ELEMENT liste (label, element+,(x, y)?, largeur?)>
-			<!ATTLIST liste id ID #REQUIRED
-									type  (int | char | boolean | String | double) #REQUIRED>
-			<!ELEMENT element     (#PCDATA)>
-			
-	 <!ELEMENT boutonGroupe (label, (checkBox+ | boutonRadio*), (x, y)?, largeur?)>
-			<!ATTLIST boutonGroupe id ID   #REQUIRED
-					  type (int | char | boolean | String | double) #REQUIRED>
-			<!ELEMENT checkBox        (#PCDATA)>
-			<!ELEMENT boutonRadio     (#PCDATA)>
-			<!ATTLIST boutonRadio ordre CDATA #REQUIRED>
-			
-	 <!ELEMENT composant (label, (x, y)?, largeur?)>
-			<!ATTLIST composant id ID #REQUIRED
-					  compo (champDeTexte | tableau) #REQUIRED
-					  type  (int | char | boolean | String | double) #REQUIRED>
-			 
-			<!ELEMENT label     (#PCDATA)>
-			<!ELEMENT posX      (#PCDATA)>
-			<!ELEMENT posY      (#PCDATA)>
-			<!ELEMENT largeur   (#PCDATA)>
+<!ELEMENT formulaire ((composant | liste | boutonGroupe | tableau)*)>
+   <!ELEMENT x (#PCDATA)>
+   <!ELEMENT y (#PCDATA)>
+   <!ELEMENT liste (element+,(x, y)?, largeur?)>
+      <!ATTLIST liste label CDATA #REQUIRED
+                      id ID #REQUIRED
+                      type  (int | char | boolean | String | double) #REQUIRED>
+      <!ELEMENT element     (#PCDATA)>
+      
+   <!ELEMENT boutonGroupe ((checkBox+ | boutonRadio*), (x, y)?, largeur?)>
+      <!ATTLIST boutonGroupe label CDATA #REQUIRED
+                             id ID   #REQUIRED
+                             type (int | char | boolean | String | double) #REQUIRED>
+      <!ELEMENT checkBox        (#PCDATA)>
+      <!ELEMENT boutonRadio     (#PCDATA)>
+         <!ATTLIST boutonRadio ordre CDATA #REQUIRED>
+      
+   <!ELEMENT composant ((x, y)?, largeur?)>
+      <!ATTLIST composant label CDATA #REQUIRED
+                          id ID #REQUIRED
+                          compo (champDeTexte | caseACocher | tableau) #REQUIRED
+                          type  (int | char | boolean | String | double) #REQUIRED>
+       
+      <!ELEMENT posX      (#PCDATA)>
+      <!ELEMENT posY      (#PCDATA)>
+      <!ELEMENT largeur   (#PCDATA)>
+      
+   <!ELEMENT tableau ((x, y)?)>
+      <!ATTLIST tableau label CDATA #REQUIRED
+                        id ID #REQUIRED
+                        nbLignes CDATA #REQUIRED
+                        nbColonnes CDATA #REQUIRED>
