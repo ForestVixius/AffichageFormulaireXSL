@@ -31,7 +31,7 @@
 
     <tableau id="c5" type="int">
         <label>Tableau</label>
-        <nbLignes>1</nbLignes>
+        <nbLignes>5</nbLignes>
         <nbColonnes>5</nbColonnes>
     </tableau>
     

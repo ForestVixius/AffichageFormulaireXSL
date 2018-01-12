@@ -78,7 +78,9 @@
 										<xsl:with-param name="lig" select="nbLignes" /> 
 										<xsl:with-param name="col" select="nbColonnes" /> 
 									</xsl:call-template>
-								</table>
+								</table></td><td>
+									<p>Valeur :</p>
+									<input type="text" class="entreeTab"></input>
 								</td></tr>
 							</xsl:if>
 						</xsl:for-each>
@@ -93,30 +95,47 @@
 		<xsl:param name="i"/>
 		<xsl:param name="lig"/>
 		<xsl:param name="col"/>
-		<xsl:if test="$i &lt; $lig">
+		<xsl:if test="$i &lt; $lig+1">
 			<tr>
 			<xsl:call-template name="colonnes">
 				<xsl:with-param name="cpt" select="0"/>
-				<xsl:with-param name="col" select="$col" /> 
+				<xsl:with-param name="col" select="$col" />
+				<xsl:with-param name="i" select="$i" /> 
 			</xsl:call-template>
 			<xsl:call-template name="lignes">
 				<xsl:with-param name="i" select="number($i)+1"/>
 				<xsl:with-param name="col" select="$col" /> 
 				<xsl:with-param name="lig" select="$lig" /> 
 			</xsl:call-template>
+			
 			</tr>
 		</xsl:if>
 	</xsl:template>
 
 	<xsl:template name="colonnes">
 		<xsl:param name="cpt"/>
+		<xsl:param name="i"/>
 		<xsl:param name="col"/>
-		<xsl:if test="$cpt &lt; $col">
-		<td></td>
-		<xsl:call-template name="colonnes">
-			<xsl:with-param name="cpt" select="number($cpt)+1"/>
-			<xsl:with-param name="col" select="$col"/>
-		</xsl:call-template>
+		<xsl:if test="$cpt &lt; $col+1">
+			<xsl:choose>
+				<xsl:when test="$i=0 and $cpt = 0 ">
+					<td class="numTableau"></td>
+				</xsl:when>
+				<xsl:when test="$cpt = 0 ">
+					<td class="numTableau"><xsl:value-of select="$i"/></td>
+				</xsl:when>
+				<xsl:when test="$i=0 and $cpt != 0 ">
+					<td class="numTableau"><xsl:value-of select="$cpt"/></td>
+				</xsl:when>
+				<xsl:otherwise>
+					<td></td>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:call-template name="colonnes">
+				<xsl:with-param name="cpt" select="number($cpt)+1"/>
+				<xsl:with-param name="col" select="$col"/>
+				<xsl:with-param name="i" select="$i" /> 
+			</xsl:call-template>
 		</xsl:if>
 	</xsl:template>
 

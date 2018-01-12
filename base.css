@@ -134,3 +134,11 @@ input[type=text]{
 .tableau tr {
     height: 32px !important;
 }
+
+.numTableau {
+    border-color: rgba(0,0,0,0) !important;
+}
+
+input[type=text].entreeTab {
+    width: 40px;
+}
