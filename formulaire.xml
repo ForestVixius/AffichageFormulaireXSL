@@ -29,7 +29,7 @@
         <label>Prénom</label>
     </composant>
 
-    <tableau id="c5" type="String">
+    <tableau id="c5" type="int">
         <label>Tableau</label>
         <nbLignes>1</nbLignes>
         <nbColonnes>5</nbColonnes>

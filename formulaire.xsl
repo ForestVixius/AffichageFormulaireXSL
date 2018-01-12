@@ -51,7 +51,6 @@
 									<xsl:element name="input">
 										<xsl:attribute name="class">inputForm</xsl:attribute>
 										<xsl:attribute name="type">text</xsl:attribute>
-										<xsl:attribute name="value"><xsl:value-of select="."/></xsl:attribute>
 									</xsl:element>
 								</xsl:if></td></tr>
 							</xsl:if>
