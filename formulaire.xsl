@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+	
+
 	<xsl:template match="/">
 		<html>
 			<head>
 				<link href="base.css" rel="stylesheet"/>
-				<script src="jquery-3.1.1.min.js"></script>
-				<script type="text/javascript" src="touches.js"></script>
+				<script src="jquery-3.1.1.min.js"/>
+				<script type="text/javascript" src="touches.js"/>
 			</head>
 			<body>
 
@@ -67,11 +70,17 @@
 								</td></tr>
 							</xsl:if>
 							<xsl:if test="name(.) = 'tableau'">
+								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
+								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
+								<td><xsl:value-of select="label"></xsl:value-of></td><td>
 								<table class="tableau">
 									<xsl:call-template name="lignes">
 										<xsl:with-param name="i" select="0"/>
+										<xsl:with-param name="lig" select="nbLignes" /> 
+										<xsl:with-param name="col" select="nbColonnes" /> 
 									</xsl:call-template>
 								</table>
+								</td></tr>
 							</xsl:if>
 						</xsl:for-each>
 					</xsl:for-each>
@@ -83,14 +92,18 @@
 
 	<xsl:template name="lignes">
 		<xsl:param name="i"/>
-		<xsl:value-of select="number($i)"/>
-		<xsl:if test="$i &lt; 5">
+		<xsl:param name="lig"/>
+		<xsl:param name="col"/>
+		<xsl:if test="$i &lt; $lig">
 			<tr>
 			<xsl:call-template name="colonnes">
 				<xsl:with-param name="cpt" select="0"/>
+				<xsl:with-param name="col" select="$col" /> 
 			</xsl:call-template>
 			<xsl:call-template name="lignes">
 				<xsl:with-param name="i" select="number($i)+1"/>
+				<xsl:with-param name="col" select="$col" /> 
+				<xsl:with-param name="lig" select="$lig" /> 
 			</xsl:call-template>
 			</tr>
 		</xsl:if>
@@ -98,10 +111,12 @@
 
 	<xsl:template name="colonnes">
 		<xsl:param name="cpt"/>
-		<xsl:if test="$cpt &lt; 5">
-		<td>o</td>
+		<xsl:param name="col"/>
+		<xsl:if test="$cpt &lt; $col">
+		<td></td>
 		<xsl:call-template name="colonnes">
 			<xsl:with-param name="cpt" select="number($cpt)+1"/>
+			<xsl:with-param name="col" select="$col"/>
 		</xsl:call-template>
 		</xsl:if>
 	</xsl:template>
