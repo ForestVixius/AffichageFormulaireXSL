@@ -15,7 +15,7 @@
 			<h1 class="titre">Prévisualisation du formulaire :</h1>
 			<p class="instructions">ALT + I pour afficher les IDs</p>
 			<p class="instructions">ALT + T pour afficher les types de retour</p>
-			<form action="https://www.w3schools.com/action_page.php">
+			<form action="">
 				<table class="formulaire">
 					<xsl:for-each select="/.">
 						<xsl:for-each select="descendant::*">
@@ -74,9 +74,8 @@
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
 								<td><xsl:value-of select="label"></xsl:value-of></td><td>
-								<div style="width:170px; height:250px; overflow:auto;">
+								<div style="width:265px; height:251px; overflow:auto;">
 								<table class="tableau">
-
 									<xsl:call-template name="lignes">
 										<xsl:with-param name="i" select="0"/>
 										<xsl:with-param name="lig" select="nbLignes" /> 
@@ -84,12 +83,14 @@
 									</xsl:call-template>
 								</table></div></td><td>
 									<p>Valeur :</p>
-									<input type="text" class="entreeTab"></input>
+									<form><input type="text" class="entreeTab"></input></form>
 								</td></tr>
 							</xsl:if>
 						</xsl:for-each>
 					</xsl:for-each>
 				</table>
+				<input type="reset" value="Annuler"></input>
+				<input type="submit" value="Valider"></input>
 			</form>
 			<script type="text/javascript" src="touches.js"/>
 			</body>
@@ -127,10 +128,10 @@
 					<td class="numTableau"></td>
 				</xsl:when>
 				<xsl:when test="$cpt = 0 ">
-					<td class="cellule numTableau"><xsl:value-of select="$i"/></td>
+					<td class="cellule numTableau"><xsl:value-of select="number($i)-1"/></td>
 				</xsl:when>
 				<xsl:when test="$i=0 and $cpt != 0 ">
-					<td class="cellul numTableau"><xsl:value-of select="$cpt"/></td>
+					<td class="cellul numTableau"><xsl:value-of select="number($cpt)-1"/></td>
 				</xsl:when>
 				<xsl:otherwise>
 					<td class="cellule"></td>

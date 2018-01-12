@@ -31,8 +31,8 @@
 
     <tableau id="c5" type="int">
         <label>Tableau</label>
-        <nbLignes>12</nbLignes>
-        <nbColonnes>7</nbColonnes>
+        <nbLignes>6</nbLignes>
+        <nbColonnes>6</nbColonnes>
     </tableau>
     
 </formulaire>

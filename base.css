@@ -24,8 +24,10 @@ body, h1, h2, h3, h4, h5, h6, section, p, pre, input, select, textarea, button, 
     color: #aba8a1;
 }
 
+
 .formulaire {
     margin-top: 30px;
+    
 }
 
 body {
@@ -110,6 +112,26 @@ input[type=text]{
     width : 300px;
 }
 
+input[type=reset] {
+    width: initial;
+    height: initial;
+    padding: 10px;
+    border-radius: 10px;
+    background: #e3eff3;
+    position: relative;
+    left: 250px; top : 5px;
+}
+
+input[type=submit] {
+    width: initial;
+    height: initial;
+    padding: 10px;
+    border-radius: 10px;
+    background: #e3eff3;
+    position: relative;
+    left: 250px; top : 5px;
+}
+
 .inputForm {
     float : left;
 }
@@ -147,17 +169,19 @@ input[type=text]{
 }
 */
 .tableau tr td {
-    width: 32px !important;
-
     border: 1px solid black;
+    min-width: 24px;
+    min-height: 32px;
+    max-width: 24px;
+    max-height: 32px;
+}
+
+.tableau tr td:after {
+  
 }
 
 .tableau tr td.focus {
     background-color: grey;
-}
-
-.tableau tr {
-   height: 32px !important;
 }
 
 .numTableau {
