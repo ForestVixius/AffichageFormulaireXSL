@@ -8,7 +8,7 @@
 			<head>
 				<link href="base.css" rel="stylesheet"/>
 				<script src="jquery-3.1.1.min.js"/>
-				<script type="text/javascript" src="touches.js"/>
+				
 			</head>
 			<body>
 
@@ -74,13 +74,15 @@
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
 								<td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<div style="width:170px; height:250px; overflow:auto;">
 								<table class="tableau">
+
 									<xsl:call-template name="lignes">
 										<xsl:with-param name="i" select="0"/>
 										<xsl:with-param name="lig" select="nbLignes" /> 
 										<xsl:with-param name="col" select="nbColonnes" /> 
 									</xsl:call-template>
-								</table></td><td>
+								</table></div></td><td>
 									<p>Valeur :</p>
 									<input type="text" class="entreeTab"></input>
 								</td></tr>
@@ -89,6 +91,7 @@
 					</xsl:for-each>
 				</table>
 			</form>
+			<script type="text/javascript" src="touches.js"/>
 			</body>
 		</html>
 	</xsl:template>
@@ -124,13 +127,13 @@
 					<td class="numTableau"></td>
 				</xsl:when>
 				<xsl:when test="$cpt = 0 ">
-					<td class="numTableau"><xsl:value-of select="$i"/></td>
+					<td class="cellule numTableau"><xsl:value-of select="$i"/></td>
 				</xsl:when>
 				<xsl:when test="$i=0 and $cpt != 0 ">
-					<td class="numTableau"><xsl:value-of select="$cpt"/></td>
+					<td class="cellul numTableau"><xsl:value-of select="$cpt"/></td>
 				</xsl:when>
 				<xsl:otherwise>
-					<td></td>
+					<td class="cellule"></td>
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:call-template name="colonnes">

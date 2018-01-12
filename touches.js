@@ -1,3 +1,8 @@
+$('.cellule').click(function (event) {
+    $('*').removeClass('focus');
+    $(this).addClass('focus');
+});
+
 document.onkeyup=function(e){
 	var e = e || window.event; // for IE to cover IEs window object
 	if(e.altKey && e.which == '73') {

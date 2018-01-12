@@ -137,15 +137,27 @@ input[type=text]{
     width: 60px;
 }
 
-/* TABLEAU */
+/* TABLEAUX */
 
+/*.tableau {
+    width: 100px;
+    height: 100px;
+   overflow: auto;
+
+}
+*/
 .tableau tr td {
-    width: 16px !important;
+    width: 32px !important;
+
     border: 1px solid black;
 }
 
+.tableau tr td.focus {
+    background-color: grey;
+}
+
 .tableau tr {
-    height: 32px !important;
+   height: 32px !important;
 }
 
 .numTableau {
