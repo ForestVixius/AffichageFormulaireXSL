@@ -12,9 +12,11 @@
 			</head>
 			<body>
 
-			<h1>Prévisualisation du formulaire :</h1>
+			<h1 class="titre">Prévisualisation du formulaire :</h1>
+			<p class="instructions">ALT + I pour afficher les IDs</p>
+			<p class="instructions">ALT + T pour afficher les types de retour</p>
 			<form action="https://www.w3schools.com/action_page.php">
-				<table>
+				<table class="formulaire">
 					<xsl:for-each select="/.">
 						<xsl:for-each select="descendant::*">
 							<xsl:if test="name(.) = 'boutonGroupe'">

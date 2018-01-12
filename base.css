@@ -15,6 +15,19 @@ body, h1, h2, h3, h4, h5, h6, section, p, pre, input, select, textarea, button, 
     vertical-align: baseline;
 }
 
+.titre {
+    margin-bottom: 20px; 
+}
+
+.instructions {
+    font-style: italic;
+    color: #aba8a1;
+}
+
+.formulaire {
+    margin-top: 30px;
+}
+
 body {
     font-size: 14px;
     margin: 20px;
@@ -142,3 +155,4 @@ input[type=text]{
 input[type=text].entreeTab {
     width: 40px;
 }
+
