@@ -5,190 +5,192 @@
 /* Général */
 
 body, h1, h2, h3, h4, h5, h6, section, p, pre, input, select, textarea, button, a, span, label {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: #2d3239;
-    line-height: 1.42857143;
-    vertical-align: baseline;
+	margin        : 0;
+	padding       : 0;
+	border        : 0;
+	font-family   : 'Open Sans', sans-serif;
+	font-weight   : 400;
+	color         : #2d3239;
+	line-height   : 1.42857143;
+	vertical-align: baseline;
 }
 
 .titre {
-    margin-bottom: 20px; 
+	margin-bottom: 20px; 
 }
 
 .instructions {
-    font-style: italic;
-    color: #aba8a1;
+	font-style: italic;
+	color     : #aba8a1;
 }
 
-
 .formulaire {
-    margin-top: 30px;
-    
+	margin-top: 30px;
+	
+}
+
+.centre {
+	text-align: center;
 }
 
 body {
-    font-size: 14px;
-    margin: 20px;
+	font-size: 14px;
+	margin   : 20px;
 }
 
-/* Table */
+/* TABLEAU FORMULAIRE */
+
 table {
-    border-spacing: 0;
+	border-spacing: 0;
 }
 
-td,
-th {
-    text-align: left;
-    padding: 8px;
-    width: 120px;
-    display: inline;
+td {
+	text-align: left;
+	padding   : 8px;
+	width     : 150px;
+}
+
+td:nth-child(odd) {
+	text-align: center;
 }
 
 td > * {
-    vertical-align : middle;
+	vertical-align : middle;
 }
 
 table>thead>tr>th {
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
+	font-weight: bold;
+	border-bottom: 2px solid #ddd;
 }
 
 table>tbody>tr {
-    border-top: 1px solid #ddd;
-    padding: 8px;
+	border-top: 1px solid #ddd;
+	padding: 8px;
 }
 
 table>tbody>tr:first-child>td, {
-    border-top: 0;
+	border-top: 0;
 }
 
-
-/* Select */
+/* FORMULAIRE */
 
 select:focus,
 textarea:focus,
 input:focus {
-    border-color: #F7882F;
-    box-shadow: none;
-    outline: none;
+	border-color: #F7882F;
+	box-shadow: none;
+	outline: none;
 }
 
 select,
 .select,
 textarea {
-    background           : #fff;
-    border               : 1px solid #ddd;
-    -webkit-border-radius: 0;
-    -webkit-appearance   : none;
-    border-radius        : 0;
-    box-sizing           : border-box;
-    line-height          : 17px;
-    height               : 32px;
-    width                : 100%;
-    padding              : 6px 8px 6px 8px;
-    margin-bottom        : 15px;
-    font-size            : inherit;
-    vertical-align       : middle;
+	background           : #fff;
+	border               : 1px solid #ddd;
+	-webkit-border-radius: 0;
+	-webkit-appearance   : none;
+	border-radius        : 0;
+	box-sizing           : border-box;
+	line-height          : 17px;
+	height               : 32px;
+	width                : 100%;
+	padding              : 6px 8px 6px 8px;
+	margin-bottom        : 15px;
+	font-size            : inherit;
+	vertical-align       : middle;
 }
 
 input {
-    background           : #fff;
-    border               : 1px solid #ddd;
-    -webkit-border-radius: 0;
-    margin-right         : 10px; 
-    border-radius        : 0;
-    box-sizing           : border-box;
-    line-height          : 17px;
-    height               : 16px;
-    width                : 16px;
+	background           : #fff;
+	border               : 1px solid #ddd;
+	-webkit-border-radius: 0;
+	margin-right         : 10px; 
+	border-radius        : 0;
+	box-sizing           : border-box;
+	line-height          : 17px;
+	height               : 16px;
+	width                : 16px;
 }
 
 input[type=text]{
-    height: 32px;
-    width : 300px;
+	height: 32px;
+	width : 300px;
 }
 
 input[type=reset] {
-    width: initial;
-    height: initial;
-    padding: 10px;
-    border-radius: 10px;
-    background: #e3eff3;
-    position: relative;
-    left: 250px; top : 5px;
+	width: initial;
+	height: initial;
+	padding: 10px;
+	border-radius: 10px;
+	background: #e3eff3;
+	position: relative;
+	left: 250px; top : 5px;
 }
 
 input[type=submit] {
-    width: initial;
-    height: initial;
-    padding: 10px;
-    border-radius: 10px;
-    background: #e3eff3;
-    position: relative;
-    left: 250px; top : 5px;
+	width: initial;
+	height: initial;
+	padding: 10px;
+	border-radius: 10px;
+	background: #e3eff3;
+	position: relative;
+	left: 250px; top : 5px;
 }
+
+input[type=date] {
+	width        : initial;
+	height       : initial;
+	padding      : 10px;
+	border-radius: 10px;
+}
+
 
 .inputForm {
-    float : left;
+	float : left;
 }
 
-/* ID */
+/* ID et TYPE RETOUR */
 
 .id, .retour {
-    position     : relative;
-    left         : 10px;
-    display      : none;
-    padding      : 5px;
-    border-radius: 5px;
-    color        : white;
+	position     : relative;
+	left         : 10px;
+	display      : none;
+	padding      : 5px;
+	border-radius: 5px;
+	color        : white;
 }
 
 .retour {
-    background-color: green;
+	background-color: green;
 }
 
 .id {
-    background-color: red;
+	background-color: red;
 }
 
 .colID, .colRetour {
-    width: 60px;
+	width: 60px;
 }
 
 /* TABLEAUX */
 
-/*.tableau {
-    width: 100px;
-    height: 100px;
-   overflow: auto;
-
-}
-*/
 .tableau tr td {
-    border: 1px solid black;
-    min-width: 24px;
-    min-height: 32px;
-    max-width: 24px;
-    max-height: 32px;
-}
-
-.tableau tr td:after {
-  
+	border    : 1px solid black;
+	min-width : 24px;
+	min-height: 32px;
+	max-width : 24px;
+	max-height: 32px;
 }
 
 .tableau tr td.focus {
-    background-color: grey;
+	background-color: grey;
 }
 
 .numTableau {
-    border-color: rgba(0,0,0,0) !important;
+	border-color: rgba(0,0,0,0) !important;
 }
 
 input[type=text].entreeTab {
-    width: 40px;
+	width: 40px;
 }
 

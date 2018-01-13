@@ -18,21 +18,29 @@
         <element>Antigua Barbuda</element>
     </liste>
     
+    <composant id="c3" compo="champDeTexte" type="String">
+        <label>Prénom</label>
+    </composant>
+
     <boutonGroupe id="c4" type="String">
         <label>Sexe</label>
         <boutonRadio>Homme</boutonRadio>
         <boutonRadio>Femme</boutonRadio>
         <boutonRadio>Autre</boutonRadio>
     </boutonGroupe>
-    
-    <composant id="c3" compo="champDeTexte" type="String">
-        <label>Prénom</label>
-    </composant>
 
     <tableau id="c5" type="int">
         <label>Tableau</label>
-        <nbLignes>6</nbLignes>
-        <nbColonnes>6</nbColonnes>
+        <nbLignes>5</nbLignes>
+        <nbColonnes>5</nbColonnes>
     </tableau>
+
+    <calendrier id="c6">
+        <label>Calendrier</label>
+    </calendrier>
+
+    <composant id="c7" compo="caseACocher" type="boolean">
+        <label>Rester connecté ?</label>
+    </composant>
     
 </formulaire>
