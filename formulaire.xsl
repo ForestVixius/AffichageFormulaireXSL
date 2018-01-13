@@ -81,14 +81,21 @@
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
 								<td><xsl:value-of select="label"></xsl:value-of></td><td>
-								<select> <!-- On créer un select, qui est une liste déroulante -->
+								<xsl:element name="input">
+										<xsl:attribute name="list"><xsl:value-of select="label"></xsl:value-of></xsl:attribute>
+										<xsl:attribute name="type"><xsl:value-of select="label"></xsl:value-of></xsl:attribute>
+										<xsl:attribute name="type">text</xsl:attribute>
+								</xsl:element>
+								<xsl:element name="datalist">
+									<xsl:attribute name="id"><xsl:value-of select="label"></xsl:value-of></xsl:attribute>
+									<!-- On créer un datalist, qui est une liste déroulante -->
 									<xsl:for-each select="descendant::*">
 										<!-- On parcourt tous les éléments enfants qui ne sont pas des label et on les ajoute à la liste -->
 										<xsl:if test="name(.) != 'label'">
 											<option><xsl:value-of select="."/></option>
 										</xsl:if>
 									</xsl:for-each>
-								</select>
+								</xsl:element>
 								</td></tr>
 							</xsl:if>
 							<xsl:if test="name(.) = 'tableau'">

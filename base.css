@@ -4,7 +4,7 @@
 
 /* Général */
 
-body, h1, h2, h3, h4, h5, h6, section, p, pre, input, select, textarea, button, a, span, label {
+body, h1, h2, h3, h4, h5, h6, section, p, pre, input, datalist, textarea, button, a, span, label {
 	margin        : 0;
 	padding       : 0;
 	border        : 0;
@@ -74,16 +74,17 @@ table>tbody>tr:first-child>td, {
 
 /* FORMULAIRE */
 
-select:focus,
+datalist:focus,
 textarea:focus,
 input:focus {
 	border-color: #F7882F;
 	box-shadow: none;
 	outline: none;
+
 }
 
-select,
-.select,
+datalist,
+.datalist,
 textarea {
 	background           : #fff;
 	border               : 1px solid #ddd;
@@ -112,7 +113,7 @@ input {
 	width                : 16px;
 }
 
-input[type=text]{
+input[type=text], input[name=list] {
 	height: 32px;
 	width : 300px;
 }
@@ -169,7 +170,7 @@ input[type=date] {
 }
 
 .colID, .colRetour {
-	width: 60px;
+	width: 80px;
 }
 
 /* TABLEAUX */
