@@ -15,6 +15,10 @@ body, h1, h2, h3, h4, h5, h6, section, p, pre, input, datalist, textarea, button
 	vertical-align: baseline;
 }
 
+.boutons {
+	margin-top : 30px;
+}
+
 .titre {
 	margin-bottom: 20px; 
 }
@@ -105,6 +109,7 @@ input {
 	background           : #fff;
 	border               : 1px solid #ddd;
 	-webkit-border-radius: 0;
+	padding              : 5px;
 	margin-right         : 10px; 
 	border-radius        : 0;
 	box-sizing           : border-box;

@@ -1,46 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="formulaire.xsl"?>
+<?xml-stylesheet type="text/xsl" href="ressources/formulaire.xsl"?>
 
-<!DOCTYPE formulaire SYSTEM "DTD.dtd">
+<!DOCTYPE formulaire PUBLIC "-//JDOM//DTD validation 1.0//EN" "ressources/DTD.dtd">
+
 
 <formulaire>
 
-    <boutonGroupe id="c1" type="String">
-        <label>Fruit</label>
-        <checkBox>Pomme</checkBox>
-        <checkBox>Poire</checkBox>
-        <checkBox>Fraise</checkBox>
-    </boutonGroupe>
-    
-    <liste id="c2" type="String">
-        <label>Pays</label>
-        <element>France</element>
-        <element>Antigua Barbuda</element>
-    </liste>
-    
-    <composant id="c3" compo="champDeTexte" type="String">
-        <label>Prénom</label>
-    </composant>
+    <fenetre>
+        <position>300,300</position>
+        <taille>500,500</taille>
+    </fenetre>
 
-    <boutonGroupe id="c4" type="String">
-        <label>Sexe</label>
-        <boutonRadio>Homme</boutonRadio>
-        <boutonRadio>Femme</boutonRadio>
-        <boutonRadio>Autre</boutonRadio>
+    <boutonGroupe label="Sexe" id="c3" type="String">
+        <boutonRadio ordre="1">Homme</boutonRadio>
+        <boutonRadio ordre="2">Femme</boutonRadio>
+        <boutonRadio ordre="3">Autre</boutonRadio>
     </boutonGroupe>
 
-    <tableau id="c5" type="int">
-        <label>Tableau</label>
-        <nbLignes>5</nbLignes>
-        <nbColonnes>5</nbColonnes>
-    </tableau>
+    <composant label="Prénom" id="c2" compo="champDeTexte" type="String"/>
 
-    <calendrier id="c6">
-        <label>Calendrier</label>
-    </calendrier>
+    <boutonGroupe label="Couleur" id="c4" type="String">
+        <boutonRadio ordre="1">Rouge</boutonRadio>
+        <boutonRadio ordre="2">Bleu</boutonRadio>
+    </boutonGroupe>
 
-    <composant id="c7" compo="caseACocher" type="boolean">
-        <label>Rester connecté ?</label>
+   <!-- <composant label="J'accepte les conditions générales de vente" id="c5" compo="caseACocher" type="boolean">
     </composant>
-    
-</formulaire>
+
+    <composant label="Tableau de int :" id="c12" compo="tableau" type="int"></composant>-->
+
+
+    <tableau label="Tableau de int :" id="c13" nbLignes="50" nbColonnes="50"/>
+
+ </formulaire>

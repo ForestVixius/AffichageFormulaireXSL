@@ -1,0 +1,42 @@
+<!ELEMENT formulaire (fenetre?, (composant | liste | boutonGroupe | tableau | calendrier)*)>
+   <!ELEMENT fenetre (position, taille)>
+      <!ELEMENT taille (#PCDATA)>
+      <!ELEMENT position (#PCDATA)>
+   <!ELEMENT liste (element+)>
+      <!ATTLIST liste label CDATA #REQUIRED
+                      id ID #REQUIRED
+                      type  (int | char | boolean | String | double) #REQUIRED
+                      x CDATA #IMPLIED
+                      y CDATA #IMPLIED
+                      largeur CDATA #IMPLIED>
+      <!ELEMENT element     (#PCDATA)>
+      
+   <!ELEMENT boutonGroupe ((checkBox+ | boutonRadio*))>
+      <!ATTLIST boutonGroupe label CDATA #REQUIRED
+                             id ID   #REQUIRED
+                             type (int | char | boolean | String | double) #REQUIRED>
+      <!ELEMENT checkBox        (#PCDATA)>
+      <!ELEMENT boutonRadio     (#PCDATA)>
+         <!ATTLIST boutonRadio ordre CDATA #REQUIRED>
+      
+   <!ELEMENT composant EMPTY>
+      <!ATTLIST composant label CDATA #REQUIRED
+                          id ID #REQUIRED
+                          compo (champDeTexte | caseACocher | tableau) #REQUIRED
+                          type  (int | char | boolean | String | double) #REQUIRED
+                          x CDATA #IMPLIED
+                          y CDATA #IMPLIED
+                          largeur CDATA #IMPLIED>
+
+   <!ELEMENT tableau EMPTY>
+      <!ATTLIST tableau label CDATA #REQUIRED
+                        id ID #REQUIRED
+                        nbLignes CDATA #REQUIRED
+                        nbColonnes CDATA #REQUIRED>
+
+   <!ELEMENT calendrier EMPTY>
+      <!ATTLIST calendrier label CDATA #REQUIRED
+                           id ID #REQUIRED
+                           x CDATA #IMPLIED
+                           y CDATA #IMPLIED
+                           largeur CDATA #IMPLIED>

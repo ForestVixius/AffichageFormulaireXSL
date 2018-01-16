@@ -7,8 +7,8 @@
 		<html>
 			<head>
 				<!-- balise head avec le css, le javascript, etc -->
-				<link href="base.css" rel="stylesheet"/>
-				<script src="jquery-3.1.1.min.js"/>
+				<link href="ressources/base.css" rel="stylesheet"/>
+				<script src="ressources/jquery-3.1.1.min.js"/>
 				<title>Formulaire</title>
 			</head>
 			<body>
@@ -26,7 +26,7 @@
 								étant caché par défaut, une combinaison étant nécessaire -->
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
-								<td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<td><xsl:value-of select="@label"></xsl:value-of></td><td>
 								<!-- On parcours les enfants de l'élément actif -->
 								<xsl:for-each select="descendant::*">
 									<xsl:if test="name(.) = 'checkBox'">
@@ -57,7 +57,7 @@
 								étant caché par défaut, une combinaison étant nécessaire -->
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
-								<td><xsl:value-of select="label"></xsl:value-of></td>
+								<td><xsl:value-of select="@label"></xsl:value-of></td>
 								<!-- On vérifie que le type de l'élément actif est bien un champ de texte -->
 								<xsl:if test="@compo = 'champDeTexte'"><td>
 									<!-- On créer un input text, pour une saisie -->
@@ -80,14 +80,14 @@
 								étant caché par défaut, une combinaison étant nécessaire -->
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
-								<td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<td><xsl:value-of select="@label"></xsl:value-of></td><td>
 								<xsl:element name="input">
-										<xsl:attribute name="list"><xsl:value-of select="label"></xsl:value-of></xsl:attribute>
-										<xsl:attribute name="type"><xsl:value-of select="label"></xsl:value-of></xsl:attribute>
+										<xsl:attribute name="list"><xsl:value-of select="@label"></xsl:value-of></xsl:attribute>
+										<xsl:attribute name="type"><xsl:value-of select="@label"></xsl:value-of></xsl:attribute>
 										<xsl:attribute name="type">text</xsl:attribute>
 								</xsl:element>
 								<xsl:element name="datalist">
-									<xsl:attribute name="id"><xsl:value-of select="label"></xsl:value-of></xsl:attribute>
+									<xsl:attribute name="id"><xsl:value-of select="@label"></xsl:value-of></xsl:attribute>
 									<!-- On créer un datalist, qui est une liste déroulante -->
 									<xsl:for-each select="descendant::*">
 										<!-- On parcourt tous les éléments enfants qui ne sont pas des label et on les ajoute à la liste -->
@@ -102,8 +102,8 @@
 								<!-- On créer la ligne et on y mets l'id, le type de retour, son label, les deux premiers 
 								étant caché par défaut, une combinaison étant nécessaire -->
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
-								<td class="colRetour"><span class="retour"><xsl:value-of select="@type"></xsl:value-of></span></td>
-								<td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<td class="colRetour"><span class="retour">int</span></td>
+								<td><xsl:value-of select="@label"></xsl:value-of></td><td>
 								<!-- On créer une div de taille fixe, qui aura des scroll bar si le tableau fait plus de 
 								5 colonnes et/ou plus de 5 lignes -->
 								<div style="width:265px; height:251px; overflow:auto;">
@@ -113,8 +113,8 @@
 									On commence donc par appeler le template de lignes avec un compteur et les lignes/colonnes -->
 									<xsl:call-template name="lignes">
 										<xsl:with-param name="i" select="0"/>
-										<xsl:with-param name="lig" select="nbLignes" /> 
-										<xsl:with-param name="col" select="nbColonnes" /> 
+										<xsl:with-param name="lig" select="@nbLignes" /> 
+										<xsl:with-param name="col" select="@nbColonnes" /> 
 									</xsl:call-template>
 								</table></div></td><td>
 									<!-- On ajoute l'input pour la valeur de la case du tableau -->
@@ -127,7 +127,7 @@
 								étant caché par défaut, une combinaison étant nécessaire -->
 								<tr><td class="colID"><span class="id"><xsl:value-of select="@id"></xsl:value-of></span></td>
 								<td class="colRetour"><span class="retour">String</span></td>
-								<td><xsl:value-of select="label"></xsl:value-of></td><td>
+								<td><xsl:value-of select="@label"></xsl:value-of></td><td>
 								<!-- On créer un input date, qui permet de sélectionner la date -->
 								<input id="date" type="date"></input>
 								</td></tr>
@@ -137,11 +137,13 @@
 				</table>
 				<!-- Enfin on ajoute les boutons Annuler pour nettoyer le formulaire
 				et le Valider pour envoyer le formulaire -->
-				<input type="reset" value="Annuler"></input>
-				<input type="submit" value="Valider"></input>
+				<div class="boutons">
+					<input type="reset" value="Annuler"></input>
+					<input type="submit" value="Valider"></input>
+				</div>
 			</form>
 			<p class="instructions centre">(Page à but purement de prévisualisation, le formulaire ne retourne pas de valeur utilisable)</p>
-			<script type="text/javascript" src="touches.js"/>
+			<script type="text/javascript" src="ressources/touches.js"/>
 			</body>
 		</html>
 	</xsl:template>
